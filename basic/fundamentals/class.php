@@ -19,16 +19,18 @@
     
 
 
-    /*
-
-    if(method_exists('car', 'movewheels')){
-        echo "Yeah it created";
-    }
-
-    else{
-        echo "not created";
-    }
+    // if(class_exists('car')){
+    //     echo'Yes class exist';
+    // }
     
-    */
+
+    // if(method_exists('car', 'movewheels')){
+    //     echo "Yeah it created";
+    // }
+
+    // else{
+    //     echo "not created";
+    // }
+    
 
 ?>
