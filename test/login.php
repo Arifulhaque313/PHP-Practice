@@ -1,15 +1,3 @@
-
-<?php
-
-include 'connectdb.php';
-$query = "select * from users";
-$result = mysqli_query($link,$query);
-
-
-
-?>
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -40,7 +28,7 @@ $result = mysqli_query($link,$query);
       font-weight:700;
     }
   </style>
-    <H1 class="bg-info p-3 container-fluid text-center ">Read database </H1>
+    <H1 class="bg-info p-3 container-fluid text-center ">Log in</H1>
 
 
     <div class="nabba bg-warning">
@@ -49,7 +37,7 @@ $result = mysqli_query($link,$query);
             <ul class="d-flex align-items-center">
               <li><a href="index.php">Home</a></li>
               <li><a href="read.php">Read Data</a></li>
-              <li><a href="signup.php">Create account</a></li>
+              <li><a href="signup.php">Sign up</a></li>
               <li><a href="login.php">Login</a></li>
             </ul>
           </div>
@@ -57,47 +45,30 @@ $result = mysqli_query($link,$query);
     </div>
 
 
-    <div class="container my-5 d-flex justify-content-center">
 
-        <div class="div p-3 w-75">
-          <table class="table border ">
+    <div class="container d-flex justify-content-center my-5">
 
-            <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                </tr>
+        <div class="form-out p-4 w-50 border">
 
-            </thead>
+        <form action="login_verification.php" method="post">
 
-            <tbody>
-                <?php
+          <div class="mb-3">
+            <label for="" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control">
+          </div>
 
-                  while($row = mysqli_fetch_assoc($result)){
+          <div class="mb-3">
+            <label for="" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control">
+          </div>
 
-                    ?>
-
-                       <tr>
-
-                       <td> <?php  echo $row['id']; ?> </td>
-                        <td> <?php  echo $row['name']; ?> </td>
-                        <td> <?php  echo $row['email']; ?> </td>
-
-                       </tr>
-
-                    
-                    
-                    <?php
-
-                  }
-
-                ?>
+          <button class="btn btn-outline-primary" name="submit">Submit</button>
 
 
-            </tbody>
 
-          </table>
+
+        </form>
+
         </div>
 
     </div>

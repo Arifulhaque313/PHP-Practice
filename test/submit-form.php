@@ -1,34 +1,29 @@
 <?php
 
-    $link =mysqli_connect('localhost','root','','rakib');
-    if(mysqli_connect_error()){
-        die('There are some errors');
-    }
+include 'connectdb.php';
 
-    if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
+    $name = mysqli_real_escape_string($link,$_POST['name']);
+    $email = mysqli_real_escape_string($link,$_POST['email']);
+    $password = mysqli_real_escape_string($link,$_POST['password']);
+    // echo $name;
+    // echo $email;
+    // echo $password;
 
+    $query = "INSERT INTO users(name,email,password) values('$name','$email','$password')";
+    mysqli_query($link,$query);
 
-        $name=$_POST['name'];
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-        $mobile=$_POST['mobile'];
-
-
-        $query = "insert into users(name,email,password,mobile) values('$name','$email','$password','$mobile')";
-
-        mysqli_query($link,$query);
-
-    }
-
-    
-
+}
 
 
 
 
 ?>
 
-<script type="text/javascript"> 
-     alert("Inserted")
-     window.location.href='readdb.php';
-    </script>
+
+<script>
+
+            alert("Registration succesful");
+            window.location.href = "index.php";
+
+</script>

@@ -1,3 +1,9 @@
+<?php
+
+  session_start();
+
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,32 +17,50 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <H1 class="bg-info p-3 container-fluid text-center "> Insert Form </H1>
 
-    <div class="insert-form container d-flex justify-content-center">
-        <form action="submit-form.php" method="post" class="w-75">
-            <div class="my-3">
-                <label for="" class="form-label">Name</label>
-                <input type="text" class="form-control" name="name">
-            </div>
-            <div class="my-3">
-                <label for="" class="form-label">Email</label>
-                <input type="email" class="form-control" name="email">
-            </div>
-            <div class="my-3">
-                <label for="" class="form-label">password</label>
-                <input type="password" class="form-control" name="password">
-            </div>
-            <div class="my-3">
-                <label for="" class="form-label">Mobile</label>
-                <input type="text" class="form-control" name="mobile">
-            </div>
-            
-            <input type="submit" name="submit" class="btn btn-primary" value="submit">
-        </form>
+
+  <style>
+    ul li {
+      padding 20px;
+      margin:5px;
+      list-style-type: none;
+    }
+    ul li a{
+      
+      text-decoration:none;
+      margin-right:20px;
+      color:white;
+      font-size:18px;
+      font-weight:700;
+    }
+  </style>
+    <H1 class="bg-info p-3 container-fluid text-center ">This is dashboard</H1>
+
+
+    <div class="nabba bg-warning">
+
+          <div class="menuber d-flex align-item-center">
+            <ul class="d-flex align-items-center">
+              <li><a href="index.php">Home</a></li>
+              <li><a href="read.php">Dashboard</a></li>
+              <li><a href="signup.php">Sign up</a></li>
+              <li><a href="login.php">Login</a></li>
+            </ul>
+          </div>
+
     </div>
 
-   
+
+      <div class="container">
+
+      <center> <h2>Welcome to dashbord :  <span class="text-success"><?php echo  $_SESSION['name'] ; ?></span></h2> </center>
+
+      <a href="logout.php" class="btn-outline-danger"> Logout </a>
+
+      </div>
+
+
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
