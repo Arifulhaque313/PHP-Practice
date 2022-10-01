@@ -26,7 +26,7 @@ $result = mysqli_query($link,$query);
 
 <body>
   <div class="container m-5">
-    <!--Log in & signUp key -->
+    <!--Log in & signUp keyasda -->
 
     <div class="d-flex justify-content-end">
           <a href="index.php"><button class="btn btn-primary m-1">Login</button></a>
